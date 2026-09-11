@@ -16,6 +16,7 @@
     <div class="container">
 
         <h2>Form Pendaftaran Siswa Baru</h2>
+        <h1> GITHUB </h1>
 
         <form action="simpan.php" method="POST" onsubmit="return validasiForm()">
 
