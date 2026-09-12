@@ -29,7 +29,7 @@
         <div class="form-group-index">
             <label>Pilih Jurusan (Relasi Data):</label>
             <select name="id_jurusan" required>
-                <option value="">-- Pilih Jurusan --</option>
+                <option value=""> Pilih Jurusan </option>
                 <?php
                 $jur = mysqli_query($koneksi, "SELECT * FROM tb_jurusan");
                 while($j = mysqli_fetch_assoc($jur)){
