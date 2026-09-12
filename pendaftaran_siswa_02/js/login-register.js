@@ -1,22 +1,13 @@
 /* js/login-register.js */
 
-// 1. Update Jam di Status Bar
-function updateClock() {
-    const now = new Date();
-    let hours = now.getHours(), minutes = now.getMinutes();
-    document.getElementById('clock').textContent = `${hours < 10 ? '0'+hours : hours}:${minutes < 10 ? '0'+minutes : minutes}`;
-}
-setInterval(updateClock, 1000); 
-updateClock();
-
-// 2. Efek Flip 3D antara Login dan Register
+// 1. Efek Flip 3D antara Login dan Register
 function toggleView(view) {
     const container = document.getElementById('app-container');
     if (view === 'register') container.classList.add('show-register');
     else container.classList.remove('show-register');
 }
 
-// 3. Menampilkan / Menyembunyikan Password
+// 2. Menampilkan / Menyembunyikan Password
 function togglePassword(inputId, iconId) {
     const input = document.getElementById(inputId);
     const icon = document.getElementById(iconId);
@@ -31,7 +22,7 @@ function togglePassword(inputId, iconId) {
     }
 }
 
-// 4. Auto Generate Username Backend Style (Lokal)
+// 3. Auto Generate Username Backend Style (Lokal)
 function generateAutoUsername() {
     const fullName = document.getElementById('reg-fullname').value.trim();
     if (!fullName) { 
@@ -46,7 +37,7 @@ function generateAutoUsername() {
     showToast('Username otomatis berhasil dibuat!');
 }
 
-// 5. Logika Toast Notification (Popup Pesan)
+// 4. Logika Toast Notification (Popup Pesan)
 let toastTimeout;
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast');

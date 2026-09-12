@@ -4,8 +4,9 @@ body.auth-body {
     background-color: #0f172a; 
     color: #ffffff;
     margin: 0;
-    overflow: hidden; 
-    touch-action: pan-x pan-y;
+    min-height: 100vh;
+    overflow-y: auto; 
+    touch-action: pan-y;
     background: radial-gradient(circle at 15% 50%, rgba(30, 41, 59, 1), #0f172a 50%),
                 radial-gradient(circle at 85% 30%, rgba(15, 23, 42, 1), #0f172a 50%);
     background-size: cover;
@@ -77,6 +78,3 @@ body.auth-body {
 }
 .toggle-text span:hover { color: #a78bfa; text-decoration-color: #a78bfa; }
 
-.status-bar {
-    display: flex; justify-content: space-between; padding: 1rem 1.5rem; font-size: 0.875rem; font-weight: 500; color: rgba(255, 255, 255, 0.9); z-index: 50;
-}

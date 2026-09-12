@@ -25,8 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $toast_msg = "Username sudah dipakai! Pilih yang lain.";
             $toast_type = "error";
         } else {
-            $pass_hash = password_hash($pass, PASSWORD_BCRYPT);
-            $insert = mysqli_query($koneksi, "INSERT INTO tb_user (nama_lengkap, username, password) VALUES ('$nama', '$user', '$pass_hash')");
+            $insert = mysqli_query($koneksi, "INSERT INTO tb_user (nama_lengkap, username, password) VALUES ('$nama', '$user', '$pass')");
             
             if ($insert) {
                 $toast_msg = "Akun berhasil dibuat! Silakan Sign In.";
@@ -47,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_num_rows($cek) > 0) {
             $data = mysqli_fetch_assoc($cek);
             
-            if (password_verify($pass, $data['password'])) {
+            if ($pass == $data['password']) {
                 $_SESSION['username'] = $data['username'];
                 $_SESSION['nama_lengkap'] = $data['nama_lengkap'];
                 
@@ -95,16 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="auth-body min-h-screen flex flex-col antialiased selection:bg-primaryAccent selection:text-white">
 
-    <div class="status-bar w-full absolute top-0 left-0">
-        <div id="clock">12:00</div>
-        <div class="status-icons flex items-center gap-1">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">network_wifi</span>
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">signal_cellular_4_bar</span>
-            <div class="flex items-center gap-1 border border-white/50 rounded-sm px-1 text-[10px]">85%</div>
-        </div>
-    </div>
-
-    <main class="flex-1 flex items-center justify-center p-6 w-full max-w-md mx-auto relative z-10 pt-16">
+    <main class="flex-1 flex items-center justify-center p-6 w-full max-w-md mx-auto relative z-10">
         <div class="view-container <?= $show_register ? 'show-register' : '' ?>" id="app-container">
             
             <!-- FORM LOGIN -->

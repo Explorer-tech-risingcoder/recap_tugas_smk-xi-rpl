@@ -47,7 +47,11 @@ $total_jurusan = mysqli_fetch_assoc($q_jurusan)['total'];
         <!-- TOPBAR -->
         <header class="topbar">
             <h1>Dashboard Pendaftaran Siswa Baru</h1>
-            <div class="user-profile">Petugas: <strong>Administrator</strong></div>
+            <div class="user-profile">Petugas: <strong>Administrator</strong>
+              <a href="logout-index.php" class="btn btn-danger btn-sm" onclick="return confirm('yakin ingin keluar?')" style="margin-left: 15px;">
+                keluar
+              </a>
+            </div>
         </header>
 
         <!-- STATS WIDGET CARDS -->
