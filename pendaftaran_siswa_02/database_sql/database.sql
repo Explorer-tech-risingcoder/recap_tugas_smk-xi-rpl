@@ -19,3 +19,10 @@ CREATE TABLE tb_siswa (
         REFERENCES tb_jurusan(id_jurusan)
         ON DELETE CASCADE
 );
+
+CREATE TABLE tb_user (
+  id_user INT AUTO_INCREMENT PRIMARY KEY, 
+  nama_lengkap VARCHAR(100) NOT NULL, 
+  username VARCHAR(50) NOT NULL UNIQUE, 
+  password VARCHAR(255) NOT NULL
+);
