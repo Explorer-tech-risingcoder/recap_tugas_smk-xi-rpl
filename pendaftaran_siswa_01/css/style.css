@@ -1,0 +1,201 @@
+/* ======================================================
+   1. GLOBAL / UMUM (Dipakai oleh semua halaman)
+   ====================================================== */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px; 
+    background: #f4f4f9; 
+    color: #333;
+}
+
+/* Tabel Global */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+
+/* Tombol Global */
+.btn { 
+    padding: 8px 12px; 
+    border: none; 
+    border-radius: 4px; 
+    color: white; 
+    cursor: pointer; 
+    text-decoration: none; 
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.3s ease; 
+}
+.btn-green { background: #28a745; } 
+.btn-green:hover { background: #218838; }
+.btn-danger { background: #dc3545; } 
+.btn-danger:hover { background: #c82333; }
+
+
+/* ======================================================
+   2. KHUSUS MILIK INDEX.PHP (Form Pendaftaran & Data Siswa)
+   ====================================================== */
+.container-index { 
+    max-width: 950px; 
+    margin: auto; 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+}
+
+/* Form khusus di index.php */
+.form-group-index { margin-bottom: 12px; }
+.container-index label { display: block; font-weight: bold; margin-bottom: 4px; }
+.container-index input[type="text"], 
+.container-index textarea, 
+.container-index select, 
+.container-index input[type="file"] { 
+    width: 100%; 
+    padding: 8px; 
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Tombol khusus di index.php */
+.btn-blue { background-color: #007bff; }
+.btn-blue:hover { background-color: #0056b3; }
+.btn-purple { background-color: #6f42c1; }
+.btn-purple:hover { background-color: #5a32a3; }
+
+/* Tabel & Filter khusus di index.php */
+.container-index th { background-color: #1e293b; color: white; }
+.img-thumb { width: 50px; height: 60px; object-fit: cover; border-radius: 4px; }
+.filter-box { 
+    background: #e2e8f0; 
+    padding: 12px; 
+    border-radius: 6px; 
+    margin-bottom: 15px; 
+    display: flex; 
+    gap: 10px; 
+}
+
+
+/* ======================================================
+   3. KHUSUS MILIK JURUSAN.PHP (Master Data Jurusan)
+   ====================================================== */
+.container-jurusan { 
+    max-width: 600px; 
+    margin: 40px auto; 
+    background: white; 
+    padding: 25px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+/* Form khusus di jurusan.php (Sejajar/Flex) */
+.form-group-jurusan {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px; 
+}
+.form-control-jurusan {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Tabel & Tombol khusus di jurusan.php */
+.container-jurusan th { background-color: #007bff; color: white; }
+.btn-nav { 
+    background: #6c757d; 
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.btn-nav:hover { background: #5a6268; }
+
+
+
+/* ======================================================
+   4. KHUSUS MILIK CETAK.PHP (Kartu Bukti Pendaftaran)
+   ====================================================== */
+.card-print { 
+    width: 450px; 
+    margin: 40px auto; 
+    background: white; 
+    border: 2px solid #1e293b; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.card-header-print { 
+    text-align: center; 
+    border-bottom: 2px solid #1e293b; 
+    padding-bottom: 10px; 
+    margin-bottom: 15px; 
+}
+
+.card-header-print h3 { 
+    margin: 0; 
+    text-transform: uppercase; 
+    font-size: 18px;
+}
+
+.card-body-print { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; /* Agar foto dan teks sejajar di tengah */
+}
+
+.pasfoto-print { 
+    width: 110px; 
+    height: 140px; 
+    border: 1px solid #ccc; 
+    object-fit: cover; 
+    border-radius: 4px;
+}
+
+/* Penyesuaian khusus tabel di dalam kartu (menimpa desain global) */
+.info-print table { 
+    font-size: 14px; 
+    line-height: 1.6; 
+    width: 100%;
+    border: none; 
+    margin-top: 0;
+}
+
+.info-print table td {
+    border: none; /* Hilangkan garis kotak-kotak tabel */
+    padding: 5px; 
+}
+
+.btn-print { 
+    margin-top: 20px; 
+    width: 100%; 
+    padding: 10px; 
+    background: #28a745; 
+    color: white;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 14px; 
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-print:hover { background: #218838; }
+
+/* CSS KHUSUS MEDIA PRINT (Berlaku saat mode cetak di printer / simpan PDF) */
+@media print {
+    body { 
+        background: white; 
+        padding: 0; 
+        margin: 0;
+    }
+    .btn-print { 
+        display: none; /* Sembunyikan tombol saat dicetak */
+    }
+    .card-print { 
+        box-shadow: none; 
+        border: 2px solid #000; 
+        margin: 0 auto; 
+    }
+}
+
