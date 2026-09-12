@@ -29,7 +29,7 @@ if (isset($_GET['hapus'])) {
 <body>
 
 <div class="container-jurusan">
-    <a href="index.php" class="btn btn-nav">« Kembali ke Form Pendaftaran</a>
+    <a href="index.php" class="btn btn-nav">« Kembali ke Dashboard</a>
     
     <h2>Kelola Master Jurusan</h2>
     
